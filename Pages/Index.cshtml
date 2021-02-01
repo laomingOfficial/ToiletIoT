@@ -1,0 +1,32 @@
+﻿@page
+<div id="app" class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" v-for="(toilet, toiletIndex) in toiletList">
+            <div style="border-radius: 20px 20px; padding: 10px 15px; border: solid 1px #e5e5e5;"
+                :style="{'background': toilet.status?'#DAEFB3':'#EA9E8D'}">
+                設備: {{ toilet.iotId }}
+                <br />
+                狀態: {{ toilet.status ? '可使用 ( •̀ ω •́ )✧' : '使用中 (っ °Д °;)っ' }}
+                <br />
+                電量: {{ toilet.batteryLevel }}
+                <br />
+                更新: <span class="need_to_be_rendered" :datetime="toilet.lastUpdate"></span>
+                <template v-if="!toilet.status">
+                    <br />
+                    選曲: <select v-model.lazy="toilet.alarmSong">
+                        <option v-for="alarmSong in alarmSongList" :value="alarmSong.Value">{{ alarmSong.DisplayName }}
+                        </option>
+                    </select>
+                    <br />
+                    <br />
+                    <button type="button" class="btn btn-warning"
+                        v-on:click.prevent="alertToilet(toiletIndex)">你快點好嗎？</button>
+                </template>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/timeago.min.js"></script>
+<script src="~/js/vue.js"></script>
+<script src="~/js/toilet.js"></script>
