@@ -204,6 +204,8 @@ void IRAM_ATTR magnetChanged() {
 void setup() {
   Serial.begin(115200);
   setup_wifi();
+  client.setBufferSize(1024);
+  client.setKeepAlive(60);
   client.setServer(mqttServer, mqttPort);
   client.setCallback(callback);
 
