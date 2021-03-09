@@ -3,11 +3,16 @@
 
 會有這想法是因爲在公司上班時，肚子痛想跑厠所，有時跑了幾間才發現有人正在使用，害我白跑一趟。再加上有時同事上厠所超久，所以就加了個 “緊張氣氛” 的功能讓同事快點解決！
 
-![ToiletIoTDemo](ToiletIoT%20demo.gif)
+![ToiletIoTDemo](/References/ToiletIoT%20demo.gif)
 
-安裝教程影片: 稍後更新
+介紹影片: [點我觀看](https://youtu.be/vkqagM4YTSE)
 
-這項目是使用以下語言/協議開發的
+Repo文件夾介紹：
+- ASP_Web：網頁端ASP.NET Core
+- ESP32：ToiletIoT ESP32 Arduino代碼
+- References：硬體電路設計圖，一些Repo使用的照片
+
+這項目是使用以下語言/協議開發的：
 - ASP.NET Core
 - SignalR
 - VueJS
@@ -22,7 +27,7 @@
 
 
 電路圖:
-![ToiletIoT](ToiletIoT.png)
+![ToiletIoT](/References/ToiletIoT.png)
 
 
 RYC1001資料文檔鏈接: http://reyax.com/products/ryc1001/  
